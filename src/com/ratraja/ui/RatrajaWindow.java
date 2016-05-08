@@ -26,8 +26,8 @@ public class RatrajaWindow extends JFrame {
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
 
-        JPanel drawPanel = new JPanel();
-        _canvas = new Canvas() {
+        JPanel drawPanel = new JPanel() {
+        //_canvas = new Canvas() {
             @Override
             public void paint(Graphics g) {
                 super.paint(g);
@@ -38,8 +38,8 @@ public class RatrajaWindow extends JFrame {
                 }
             }
         };
-        _canvas.setBackground(Color.blue);
-        drawPanel.add(_canvas);
+        drawPanel.setBackground(Color.blue);
+        //drawPanel.add(_canvas);
         topPanel.add(drawPanel);
 
         _renderButton = new JButton("Render");
@@ -47,7 +47,7 @@ public class RatrajaWindow extends JFrame {
             System.out.println("Render now!!");
             if (_controller != null) {
                 _controller.RenderScene();
-                _canvas.repaint();
+                drawPanel.repaint();
             }
         });
         topPanel.add(_renderButton);

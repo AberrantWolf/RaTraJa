@@ -3,6 +3,7 @@
  */
 package com.ratraja.rendering;
 
+import com.ratraja.rendering.renderables.IRenderable;
 import sun.awt.Mutex;
 
 import java.util.ArrayList;

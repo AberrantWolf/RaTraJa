@@ -1,5 +1,7 @@
 package com.ratraja.rendering;
 
+import com.ratraja.rendering.renderables.IRenderable;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.List;
@@ -47,7 +49,7 @@ public class Camera {
 
     private Ray CreateRay(int w, int h) {
         double xRatioCenter = (w + 0.5) / _pWidth - 0.5;
-        double yRatioCenter = (h + 0.5) / _pHeight - 0.5;
+        double yRatioCenter = (1 - (h + 0.5) / _pHeight) - 0.5;
 
         Vector origin = new Vector(_position);
         Vector direction = new Vector(0, 0, 1);
@@ -75,21 +77,23 @@ public class Camera {
         return new Ray(origin, direction);
     }
 
-    public Color TraceRay(Ray ray, List<IRenderable> objects) {
-        IRenderable hitObject = null;
-        for (IRenderable obj : objects) {
-            double distance = Double.MAX_VALUE;
+    private Color TraceRay(Ray ray, List<IRenderable> objects) {
+        HitResult hit = null;
+        double distance = Double.MAX_VALUE;
 
-            TraceIntersection hit = obj.CheckCollision(ray);
-            if (hit != null) {
-                if (distance > hit.position.Magnitude()) {
-                    hitObject = obj;
+        for (IRenderable obj : objects) {
+            HitResult newHit = obj.CheckCollision(ray);
+            if (newHit != null) {
+                double newDist = newHit.position.Magnitude();
+                if (distance > newDist) {
+                    hit = newHit;
+                    distance = newDist;
                 }
             }
         }
 
-        if (hitObject != null) {
-            return hitObject.GetColor(ray, objects, _backgroundColor);
+        if (hit != null) {
+            return hit.renderable.GetColor(hit, objects, _backgroundColor);
         }
 
         return _backgroundColor;

@@ -13,11 +13,7 @@ public class Ray {
         direction = inDirection;
     }
 
-    public void Add(Vector vec) {
-        direction.Add(vec);
-    }
-
-    public void Normalize() {
-
+    public Vector PointAtDistance(double dist) {
+        return origin.Added(direction.Multiplied(dist));
     }
 }
