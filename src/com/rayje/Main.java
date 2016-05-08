@@ -1,10 +1,10 @@
-package com.ratraja;
+package com.rayje;
 
-import com.ratraja.controller.RatrajaController;
-import com.ratraja.rendering.Camera;
-import com.ratraja.rendering.Scene;
-import com.ratraja.rendering.renderables.Sphere;
-import com.ratraja.ui.RatrajaWindow;
+import com.rayje.controller.RayJEController;
+import com.rayje.rendering.Camera;
+import com.rayje.rendering.Scene;
+import com.rayje.rendering.renderables.Sphere;
+import com.rayje.ui.RayJERenderView;
 
 public class Main {
 
@@ -23,11 +23,11 @@ public class Main {
         scene.AddObject(sphere);
         scene.AddObject(sphere1);
 
-        RatrajaController controller = new RatrajaController();
+        RayJEController controller = new RayJEController();
         controller.SetScene(scene);
         controller.SetCamera(camera);
 
-        RatrajaWindow window = new RatrajaWindow();
+        RayJERenderView window = new RayJERenderView();
         window.SetController(controller);
         window.pack();
         window.setVisible(true);

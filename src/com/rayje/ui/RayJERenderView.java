@@ -1,23 +1,22 @@
-package com.ratraja.ui;
+package com.rayje.ui;
 
-import com.ratraja.controller.RatrajaController;
+import com.rayje.controller.RayJEController;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
 /**
  * Created by scott on 5/7/16.
  */
-public class RatrajaWindow extends JFrame {
-    private RatrajaController _controller;
+public class RayJERenderView extends JFrame {
+    private RayJEController _controller;
 
     private Canvas _canvas;
     private JButton _renderButton;
 
-    public RatrajaWindow() {
+    public RayJERenderView() {
         super("RaTraJa GUI");
 
         setMinimumSize(new Dimension(640, 480));
@@ -56,7 +55,7 @@ public class RatrajaWindow extends JFrame {
         pack();
     }
 
-    public void SetController(RatrajaController iController) {
+    public void SetController(RayJEController iController) {
         _controller = iController;
     }
 }

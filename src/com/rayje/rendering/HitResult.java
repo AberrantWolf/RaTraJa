@@ -1,6 +1,6 @@
-package com.ratraja.rendering;
+package com.rayje.rendering;
 
-import com.ratraja.rendering.renderables.IRenderable;
+import com.rayje.rendering.renderables.IRenderable;
 
 /**
  * Created by scott on 5/7/16.

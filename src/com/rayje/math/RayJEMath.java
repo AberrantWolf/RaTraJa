@@ -1,9 +1,9 @@
-package com.ratraja.math;
+package com.rayje.math;
 
 /**
  * Created by scott on 5/7/16.
  */
-public class RatrajaMath {
+public class RayJEMath {
     public static class QuadraticResult {
         public double a, b, c;
         public double t0, t1;

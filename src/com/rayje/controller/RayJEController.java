@@ -1,19 +1,19 @@
-package com.ratraja.controller;
+package com.rayje.controller;
 
-import com.ratraja.rendering.Camera;
-import com.ratraja.rendering.Scene;
+import com.rayje.rendering.Camera;
+import com.rayje.rendering.Scene;
 
 import java.awt.image.BufferedImage;
 
 /**
  * Created by scott on 5/7/16.
  */
-public class RatrajaController {
+public class RayJEController {
     private Scene _scene;
     private Camera _camera;
     private BufferedImage _image;
 
-    public RatrajaController() {
+    public RayJEController() {
         _scene = null;
         _camera = null;
         _image = new BufferedImage(200, 200, BufferedImage.TYPE_INT_ARGB);

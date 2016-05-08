@@ -1,8 +1,8 @@
-package com.ratraja.rendering.renderables;
+package com.rayje.rendering.renderables;
 
-import com.ratraja.rendering.Ray;
-import com.ratraja.rendering.HitResult;
-import com.ratraja.rendering.Vector;
+import com.rayje.rendering.Ray;
+import com.rayje.rendering.HitResult;
+import com.rayje.rendering.Vector;
 
 import java.awt.*;
 

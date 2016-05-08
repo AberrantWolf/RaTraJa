@@ -1,8 +1,8 @@
-package com.ratraja.rendering.renderables;
+package com.rayje.rendering.renderables;
 
-import com.ratraja.math.RatrajaMath;
-import com.ratraja.rendering.*;
-import com.ratraja.rendering.Vector;
+import com.rayje.math.RayJEMath;
+import com.rayje.rendering.*;
+import com.rayje.rendering.Vector;
 
 import java.awt.*;
 
@@ -33,7 +33,7 @@ public class Sphere extends IRenderable {
         double b = 2 * ray.direction.DotProduct(L);
         double c = L.DotProduct(L) - _radiusSquared;
 
-        RatrajaMath.QuadraticResult result = RatrajaMath.SolveQuadratic(a, b, c);
+        RayJEMath.QuadraticResult result = RayJEMath.SolveQuadratic(a, b, c);
 
         if (!result.canSolve) {
             return null;
