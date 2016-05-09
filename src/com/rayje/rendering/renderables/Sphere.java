@@ -2,7 +2,7 @@ package com.rayje.rendering.renderables;
 
 import com.rayje.math.RayJEMath;
 import com.rayje.rendering.*;
-import com.rayje.rendering.Vector;
+import com.rayje.rendering.Vector3;
 
 import java.awt.*;
 
@@ -28,7 +28,7 @@ public class Sphere extends IRenderable {
 
     @Override
     public HitResult CheckCollision(Ray ray) {
-        Vector L = ray.origin.Subtracted(_position);//_position.Subtracted(ray.origin);
+        Vector3 L = ray.origin.Subtracted(_position);//_position.Subtracted(ray.origin);
         double a = ray.direction.DotProduct(ray.direction);
         double b = 2 * ray.direction.DotProduct(L);
         double c = L.DotProduct(L) - _radiusSquared;

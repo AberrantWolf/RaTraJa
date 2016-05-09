@@ -5,15 +5,15 @@ package com.rayje.rendering;
  */
 
 public class Ray {
-    public Vector origin;
-    public Vector direction;
+    public Vector3 origin;
+    public Vector3 direction;
 
-    public Ray(Vector inOrigin, Vector inDirection) {
+    public Ray(Vector3 inOrigin, Vector3 inDirection) {
         origin = inOrigin;
         direction = inDirection;
     }
 
-    public Vector PointAtDistance(double dist) {
+    public Vector3 PointAtDistance(double dist) {
         return origin.Added(direction.Multiplied(dist));
     }
 }

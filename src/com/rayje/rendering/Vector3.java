@@ -4,33 +4,33 @@ package com.rayje.rendering;
  * Created by scott on 5/7/16.
  */
 
-public class Vector {
+public class Vector3 {
     public double x, y, z;
 
-    public Vector(Vector copy) {
+    public Vector3(Vector3 copy) {
         x = copy.x;
         y = copy.y;
         z = copy.z;
     }
 
-    public Vector(double ix, double iy, double iz) {
+    public Vector3(double ix, double iy, double iz) {
         x = ix;
         y = iy;
         z = iz;
     }
 
-    public Vector Added(Vector b) {
-        return new Vector(x + b.x, y + b.y, z + b.z);
+    public Vector3 Added(Vector3 b) {
+        return new Vector3(x + b.x, y + b.y, z + b.z);
     }
 
-    public Vector Subtracted(Vector b) {
-        return new Vector(x - b.x, y - b.y, z - b.z);
+    public Vector3 Subtracted(Vector3 b) {
+        return new Vector3(x - b.x, y - b.y, z - b.z);
     }
 
 
-    public Vector Multiplied(double dist) {
-        Vector norm = Normalized();
-        return new Vector(norm.x * dist, norm.y * dist, norm.z * dist);
+    public Vector3 Multiplied(double dist) {
+        Vector3 norm = Normalized();
+        return new Vector3(norm.x * dist, norm.y * dist, norm.z * dist);
     }
 
     public double Magnitude() {
@@ -51,13 +51,13 @@ public class Vector {
      * Create a normalized copy of this vector
      * @return a normalized vector along the same direction as this one
      */
-    public Vector Normalized() {
-        Vector norm = new Vector(this);
+    public Vector3 Normalized() {
+        Vector3 norm = new Vector3(this);
         norm.Normalize();
         return norm;
     }
 
-    public double DotProduct(Vector v) {
+    public double DotProduct(Vector3 v) {
         return x * v.x + y * v.y + z * v.z;
     }
 }

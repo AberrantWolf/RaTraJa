@@ -2,7 +2,7 @@ package com.rayje.rendering.renderables;
 
 import com.rayje.rendering.Ray;
 import com.rayje.rendering.HitResult;
-import com.rayje.rendering.Vector;
+import com.rayje.rendering.Vector3;
 
 import java.awt.*;
 
@@ -11,13 +11,13 @@ import java.awt.*;
  */
 
 public abstract class IRenderable {
-    protected Vector _position;
+    protected Vector3 _position;
 
     public IRenderable() {
-        _position = new Vector(0, 0, 0);
+        _position = new Vector3(0, 0, 0);
     }
 
-    public void SetPosition(Vector v) {
+    public void SetPosition(Vector3 v) {
         _position = v;
     }
 

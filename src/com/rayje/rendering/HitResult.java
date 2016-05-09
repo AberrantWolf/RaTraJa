@@ -7,11 +7,11 @@ import com.rayje.rendering.renderables.IRenderable;
  */
 
 public class HitResult {
-    public Vector position;
+    public Vector3 position;
     public Ray ray;
     public IRenderable renderable;
 
-    public HitResult(IRenderable hitObject, Vector iPos, Ray hittingRay) {
+    public HitResult(IRenderable hitObject, Vector3 iPos, Ray hittingRay) {
         renderable = hitObject;
         position = iPos;
         ray = hittingRay;
