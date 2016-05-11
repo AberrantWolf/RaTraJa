@@ -20,7 +20,7 @@ public class Camera {
 
     private Color _backgroundColor;
 
-    private boolean _useFlatPlane = false;
+    private boolean _useFlatPlane = true;
 
     private Vector3 _position;
     //private Quaternion _orientation;  // TODO: Make a quaternion class and allow camera rotation in the renderer
@@ -29,6 +29,7 @@ public class Camera {
         _position = new Vector3(0, 0, 0);
         SetDimensions(1280, 720);
         _backgroundColor = Color.black;
+        _focalLength = 2.2; // in cm
     }
 
     public Camera(int iw, int ih) {
@@ -59,8 +60,11 @@ public class Camera {
         double vX, vY, vZ;
 
         if (_useFlatPlane) {
-            // TODO: Use flat plane for determining pixel coordinates
-            System.out.println("WARNING: Using flat plane projection without having set it up properly");
+            direction.x = xRatioCenter * 3.5 * _ratio;  // 35 mm
+            direction.y = yRatioCenter * 3.5;           // 35 mm
+            direction.z = _focalLength;
+
+            direction.Normalize();
         } else {
             double thetaX = xRatioCenter * _ratio * _fov;
             double thetaY = yRatioCenter * _fov;
